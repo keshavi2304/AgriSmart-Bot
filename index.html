@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSmart Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+
+<div class="login-container" id="loginPage">
+    <div class="login-box">
+        <h1>🌾 AgriSmart Bot</h1>
+        <p>Smart Farming Assistant</p>
+
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+
+<div class="dashboard" id="dashboard">
+
+<header>
+    <h1>🌱 AgriSmart Bot Dashboard</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#chatbot">AI Chat</a></li>
+        <li><a href="#weather">Weather</a></li>
+        <li><a href="#crop">Crop Search</a></li>
+        <li><a href="#scanner">Scanner</a></li>
+        <li><a href="#news">News Check</a></li>
+    </ul>
+</nav>
+
+<section class="hero">
+    <h2>Welcome Farmer 👨‍🌾</h2>
+    <p>Grow Smarter With AI Technology</p>
+</section>
+
+<div class="cards">
+
+<!-- AI CHATBOT -->
+
+<div class="card" id="chatbot">
+    <h2><i class="fas fa-robot"></i> AI Chatbot</h2>
+
+    <textarea
+    placeholder="Ask farming questions..."
+    id="chatInput"></textarea>
+
+    <button onclick="sendChat()">
+        Ask AI
+    </button>
+
+    <div id="chatResult"></div>
+</div>
+
+<!-- WEATHER -->
+
+<div class="card" id="weather">
+    <h2><i class="fas fa-cloud-sun"></i> Weather</h2>
+
+    <button onclick="getWeather()">
+        Current Weather
+    </button>
+
+    <div id="weatherResult"></div>
+</div>
+
+<!-- CROP SEARCH -->
+
+<div class="card" id="crop">
+    <h2><i class="fas fa-seedling"></i>
+        Fruit & Vegetable Search
+    </h2>
+
+    <input
+    type="text"
+    id="cropName"
+    placeholder="Enter crop name">
+
+    <button onclick="searchCrop()">
+        Search
+    </button>
+
+    <div id="cropResult"></div>
+</div>
+
+<!-- PRODUCT SCANNER -->
+
+<div class="card" id="scanner">
+    <h2><i class="fas fa-camera"></i>
+        Product Scanner
+    </h2>
+
+    <input type="file">
+
+    <button onclick="scanProduct()">
+        Scan Product
+    </button>
+
+    <div id="scanResult"></div>
+</div>
+
+<!-- FAKE NEWS -->
+
+<div class="card" id="news">
+    <h2><i class="fas fa-newspaper"></i>
+        Fake News Detector
+    </h2>
+
+    <textarea
+    id="newsText"
+    placeholder="Paste news here"></textarea>
+
+    <button onclick="checkNews()">
+        Check News
+    </button>
+
+    <div id="newsResult"></div>
+</div>
+
+<!-- GOVERNMENT SCHEMES -->
+
+<div class="card">
+    <h2><i class="fas fa-landmark"></i>
+        Government Schemes
+    </h2>
+
+    <ul>
+        <li>PM Kisan Yojana</li>
+        <li>Soil Health Card</li>
+        <li>Crop Insurance</li>
+        <li>Kisan Credit Card</li>
+    </ul>
+</div>
+
+<!-- MARKET PRICE -->
+
+<div class="card">
+    <h2><i class="fas fa-chart-line"></i>
+        Market Prices
+    </h2>
+
+    <p>Wheat: ₹2400/qtl</p>
+    <p>Rice: ₹3100/qtl</p>
+    <p>Cotton: ₹7600/qtl</p>
+</div>
+
+<!-- CROP CALENDAR -->
+
+<div class="card">
+    <h2><i class="fas fa-calendar"></i>
+        Crop Calendar
+    </h2>
+
+    <p>June - Cotton</p>
+    <p>July - Groundnut</p>
+    <p>October - Wheat</p>
+</div>
+
+<!-- VOICE ASSISTANT -->
+
+<div class="card">
+    <h2><i class="fas fa-microphone"></i>
+        Voice Assistant
+    </h2>
+
+    <button onclick="startVoice()">
+        Start Voice
+    </button>
+
+    <div id="voiceResult"></div>
+</div>
+
+</div>
+
+<footer>
+    <p>
+        © 2026 AgriSmart Bot |
+        Smart Agriculture Platform
+    </p>
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
