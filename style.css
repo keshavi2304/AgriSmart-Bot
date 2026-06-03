@@ -145,3 +145,15 @@ margin-bottom:15px;
 margin:10px 0;
 font-size:17px;
 }
+textarea{
+width:100%;
+padding:15px;
+border-radius:10px;
+border:1px solid #ccc;
+margin-bottom:15px;
+font-size:16px;
+}
+
+#chatResult{
+margin-top:20px;
+}
