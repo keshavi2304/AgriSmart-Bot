@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Market Prices</title>
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<header>
+<h1>📈 Market Price Dashboard</h1>
+</header>
+
+<div class="search-container">
+
+<canvas id="priceChart"></canvas>
+
+</div>
+
+<script>
+
+const ctx =
+document.getElementById('priceChart');
+
+new Chart(ctx, {
+
+type: 'line',
+
+data: {
+
+labels: [
+'Mon',
+'Tue',
+'Wed',
+'Thu',
+'Fri',
+'Sat',
+'Sun'
+],
+
+datasets: [{
+
+label: 'Cotton Price ₹',
+
+data: [
+7200,
+7300,
+7250,
+7400,
+7500,
+7600,
+7550
+],
+
+borderWidth: 3
+
+}]
+
+},
+
+options: {
+
+responsive:true
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
