@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriSmart Bot - Weather</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>☁️ Weather Information</h1>
+</header>
+
+<div class="search-container">
+
+<input type="text"
+id="city"
+placeholder="Enter City Name">
+
+<button onclick="getWeather()">
+Get Weather
+</button>
+
+<div id="weatherResult"></div>
+
+</div>
+
+<script>
+
+function getWeather(){
+
+let city =
+document.getElementById("city").value;
+
+document.getElementById("weatherResult").innerHTML=
+
+`
+<div class="info-card">
+
+<h2>${city}</h2>
+
+<p>🌡 Temperature: 30°C</p>
+
+<p>☁ Condition: Partly Cloudy</p>
+
+<p>💧 Humidity: 65%</p>
+
+<p>🌬 Wind Speed: 10 km/h</p>
+
+</div>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
