@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgriSmart Bot - Voice Assistant</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>🎤 AgriSmart Voice Assistant</h1>
+</header>
+
+<div class="voice-container">
+
+<h2>Speak Your Question</h2>
+
+<p>
+Examples:
+<br>
+"Tell me about wheat"
+<br>
+"What is cotton farming?"
+<br>
+"How to improve soil health?"
+</p>
+
+<button onclick="startVoice()">
+🎤 Start Speaking
+</button>
+
+<div class="info-card">
+
+<h3>You Said:</h3>
+
+<p id="voiceText">
+Waiting...
+</p>
+
+</div>
+
+<div class="info-card">
+
+<h3>Assistant Response:</h3>
+
+<p id="voiceAnswer">
+Ready to help...
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function startVoice(){
+
+if(!('webkitSpeechRecognition' in window)){
+
+alert("Voice Recognition Not Supported");
+
+return;
+
+}
+
+const recognition =
+new webkitSpeechRecognition();
+
+recognition.lang = "en-US";
+
+recognition.start();
+
+recognition.onresult = function(event){
+
+let text =
+event.results[0][0].transcript;
+
+document.getElementById("voiceText")
+.innerHTML = text;
+
+let answer =
+"I am learning more about agriculture.";
+
+text = text.toLowerCase();
+
+if(text.includes("wheat")){
+
+answer =
+"Wheat is generally grown during the winter season.";
+
+}
+
+else if(text.includes("cotton")){
+
+answer =
+"Cotton requires warm weather and moderate rainfall.";
+
+}
+
+else if(text.includes("soil")){
+
+answer =
+"Organic compost helps improve soil fertility.";
+
+}
+
+else if(text.includes("water")){
+
+answer =
+"Use proper irrigation and avoid overwatering crops.";
+
+}
+
+document.getElementById("voiceAnswer")
+.innerHTML = answer;
+
+};
+
+}
+
+</script>
+
+</body>
+</html>
