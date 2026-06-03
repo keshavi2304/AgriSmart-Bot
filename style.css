@@ -122,3 +122,26 @@ header{
     font-weight:normal;
     color:#555;
 }
+.search-container{
+max-width:800px;
+margin:auto;
+padding:30px;
+}
+
+.info-card{
+background:white;
+padding:25px;
+margin-top:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.info-card h2{
+color:#1b5e20;
+margin-bottom:15px;
+}
+
+.info-card p{
+margin:10px 0;
+font-size:17px;
+}
