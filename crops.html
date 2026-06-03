@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Crop Information</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>🍎 Fruits & Vegetables Information</h1>
+</header>
+
+<div style="padding:20px">
+
+<input id="crop"
+placeholder="Enter fruit or vegetable">
+
+<button onclick="searchCrop()">
+Search
+</button>
+
+<h3 id="result"></h3>
+
+</div>
+
+<script>
+
+const crops = {
+
+mango:"Summer fruit rich in Vitamin A and C.",
+
+banana:"Good source of potassium.",
+
+apple:"Rich in fiber and antioxidants.",
+
+orange:"High vitamin C fruit.",
+
+grapes:"Rich in antioxidants.",
+
+tomato:"Popular vegetable crop.",
+
+potato:"Winter season crop.",
+
+onion:"Requires fertile soil.",
+
+carrot:"Rich in Vitamin A.",
+
+cabbage:"Leafy vegetable.",
+
+cauliflower:"Cool season crop.",
+
+brinjal:"Warm season vegetable.",
+
+peas:"Protein rich crop.",
+
+ladyfinger:"Rich in fiber."
+
+};
+
+function searchCrop(){
+
+let crop =
+document.getElementById("crop")
+.value.toLowerCase();
+
+document.getElementById("result")
+.innerHTML =
+crops[crop] || "Information not available";
+
+}
+
+</script>
+
+</body>
+</html>
