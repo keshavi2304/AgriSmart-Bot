@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fake News Detector</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>📰 Fake News Detector</h1>
+</header>
+
+<div class="search-container">
+
+<textarea
+id="news"
+placeholder="Paste news here">
+</textarea>
+
+<button onclick="checkNews()">
+Check News
+</button>
+
+<div id="newsResult"></div>
+
+</div>
+
+<script>
+
+function checkNews(){
+
+let score =
+Math.floor(Math.random()*30)+70;
+
+document.getElementById("newsResult")
+.innerHTML=
+
+`
+<div class="info-card">
+
+<h2>News Analysis</h2>
+
+<p>Accuracy Score: ${score}%</p>
+
+<p>This is a demo result.</p>
+
+</div>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
