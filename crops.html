@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Crop Information</title>
+<meta charset="UTF-8">
+<title>Fruits & Vegetables Information</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header>
-<h1>🍎 Fruits & Vegetables Information</h1>
+    <h1>🍎 Fruits & Vegetables Information</h1>
 </header>
 
-<div style="padding:20px">
+<div class="search-container">
 
-<input id="crop"
-placeholder="Enter fruit or vegetable">
+    <input type="text" id="cropInput"
+    placeholder="Enter fruit or vegetable name">
 
-<button onclick="searchCrop()">
-Search
-</button>
+    <button onclick="searchCrop()">Search</button>
 
-<h3 id="result"></h3>
+    <div id="result"></div>
 
 </div>
 
@@ -28,45 +26,210 @@ Search
 
 const crops = {
 
-mango:"Summer fruit rich in Vitamin A and C.",
+mango:{
+type:"Fruit",
+season:"Summer",
+nutrition:"Vitamin A, Vitamin C, Fiber",
+benefits:"Boosts immunity, improves eye health, supports digestion",
+farming:"Requires warm climate and well-drained soil"
+},
 
-banana:"Good source of potassium.",
+banana:{
+type:"Fruit",
+season:"All Seasons",
+nutrition:"Potassium, Fiber, Carbohydrates",
+benefits:"Provides energy and supports heart health",
+farming:"Needs regular watering and warm climate"
+},
 
-apple:"Rich in fiber and antioxidants.",
+apple:{
+type:"Fruit",
+season:"Autumn",
+nutrition:"Fiber, Vitamin C, Antioxidants",
+benefits:"Good for digestion and heart health",
+farming:"Grows best in cool climate"
+},
 
-orange:"High vitamin C fruit.",
+orange:{
+type:"Fruit",
+season:"Winter",
+nutrition:"Vitamin C, Fiber",
+benefits:"Improves immunity and skin health",
+farming:"Requires moderate temperature"
+},
 
-grapes:"Rich in antioxidants.",
+grapes:{
+type:"Fruit",
+season:"Summer",
+nutrition:"Antioxidants, Vitamin K",
+benefits:"Supports heart health",
+farming:"Needs sunny environment"
+},
 
-tomato:"Popular vegetable crop.",
+watermelon:{
+type:"Fruit",
+season:"Summer",
+nutrition:"Water, Vitamin A, Vitamin C",
+benefits:"Keeps body hydrated",
+farming:"Requires warm weather"
+},
 
-potato:"Winter season crop.",
+papaya:{
+type:"Fruit",
+season:"All Seasons",
+nutrition:"Vitamin A, Vitamin C",
+benefits:"Improves digestion",
+farming:"Needs tropical climate"
+},
 
-onion:"Requires fertile soil.",
+guava:{
+type:"Fruit",
+season:"Winter",
+nutrition:"Vitamin C, Fiber",
+benefits:"Improves immunity",
+farming:"Grows in tropical regions"
+},
 
-carrot:"Rich in Vitamin A.",
+pomegranate:{
+type:"Fruit",
+season:"Autumn",
+nutrition:"Iron, Antioxidants",
+benefits:"Supports blood health",
+farming:"Needs dry climate"
+},
 
-cabbage:"Leafy vegetable.",
+tomato:{
+type:"Vegetable",
+season:"Winter",
+nutrition:"Lycopene, Vitamin C",
+benefits:"Good for heart health",
+farming:"Requires fertile soil"
+},
 
-cauliflower:"Cool season crop.",
+potato:{
+type:"Vegetable",
+season:"Winter",
+nutrition:"Carbohydrates, Potassium",
+benefits:"Provides energy",
+farming:"Needs cool climate"
+},
 
-brinjal:"Warm season vegetable.",
+onion:{
+type:"Vegetable",
+season:"Winter",
+nutrition:"Antioxidants, Vitamin C",
+benefits:"Supports immunity",
+farming:"Requires well-drained soil"
+},
 
-peas:"Protein rich crop.",
+carrot:{
+type:"Vegetable",
+season:"Winter",
+nutrition:"Vitamin A, Fiber",
+benefits:"Good for eyesight",
+farming:"Needs loose soil"
+},
 
-ladyfinger:"Rich in fiber."
+cabbage:{
+type:"Vegetable",
+season:"Winter",
+nutrition:"Vitamin K, Fiber",
+benefits:"Supports digestion",
+farming:"Cool season crop"
+},
+
+cauliflower:{
+type:"Vegetable",
+season:"Winter",
+nutrition:"Vitamin C, Fiber",
+benefits:"Supports immunity",
+farming:"Requires cool weather"
+},
+
+spinach:{
+type:"Vegetable",
+season:"Winter",
+nutrition:"Iron, Calcium",
+benefits:"Good for blood health",
+farming:"Needs fertile soil"
+},
+
+cucumber:{
+type:"Vegetable",
+season:"Summer",
+nutrition:"Water, Vitamin K",
+benefits:"Keeps body hydrated",
+farming:"Needs warm climate"
+},
+
+beetroot:{
+type:"Vegetable",
+season:"Winter",
+nutrition:"Iron, Folate",
+benefits:"Improves blood circulation",
+farming:"Requires fertile soil"
+},
+
+peas:{
+type:"Vegetable",
+season:"Winter",
+nutrition:"Protein, Fiber",
+benefits:"Supports muscle growth",
+farming:"Cool season crop"
+},
+
+ladyfinger:{
+type:"Vegetable",
+season:"Summer",
+nutrition:"Fiber, Vitamin C",
+benefits:"Improves digestion",
+farming:"Needs warm weather"
+}
 
 };
 
 function searchCrop(){
 
-let crop =
-document.getElementById("crop")
-.value.toLowerCase();
+let name =
+document.getElementById("cropInput")
+.value.toLowerCase().trim();
 
-document.getElementById("result")
-.innerHTML =
-crops[crop] || "Information not available";
+let crop = crops[name];
+
+if(crop){
+
+document.getElementById("result").innerHTML =
+
+`
+<div class="info-card">
+
+<h2>${name.toUpperCase()}</h2>
+
+<p><b>Type:</b> ${crop.type}</p>
+
+<p><b>Season:</b> ${crop.season}</p>
+
+<p><b>Nutrition:</b> ${crop.nutrition}</p>
+
+<p><b>Benefits:</b> ${crop.benefits}</p>
+
+<p><b>Farming Info:</b> ${crop.farming}</p>
+
+</div>
+`;
+
+}else{
+
+document.getElementById("result").innerHTML =
+
+`
+<div class="info-card">
+<h3>❌ Information Not Available</h3>
+<p>Please try another fruit or vegetable.</p>
+</div>
+`;
+
+}
 
 }
 
