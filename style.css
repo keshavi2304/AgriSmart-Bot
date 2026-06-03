@@ -1,191 +1,66 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
 body{
-    background:#f4fff4;
+font-family:Arial;
+margin:0;
+background:#f2fff2;
 }
 
-/* LOGIN */
-
-.login-container{
-    height:100vh;
-    background:url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200")
-    center/cover;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+.login-bg{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200")
+center/cover;
 }
 
 .login-box{
-    background:rgba(255,255,255,0.9);
-    padding:30px;
-    width:350px;
-    border-radius:15px;
-    text-align:center;
-    box-shadow:0 0 20px rgba(0,0,0,0.2);
+background:white;
+padding:30px;
+border-radius:15px;
+width:320px;
+text-align:center;
 }
 
-.login-box h1{
-    color:#2e7d32;
-    margin-bottom:10px;
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
 }
 
-.login-box p{
-    margin-bottom:20px;
-}
-
-.login-box input{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
-}
-
-.login-box button{
-    width:100%;
-    padding:12px;
-    border:none;
-    background:#2e7d32;
-    color:white;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-/* DASHBOARD */
-
-.dashboard{
-    display:none;
+button{
+background:green;
+color:white;
+padding:12px;
+border:none;
+width:100%;
+cursor:pointer;
 }
 
 header{
-    background:#2e7d32;
-    color:white;
-    text-align:center;
-    padding:20px;
-}
-
-nav{
-    background:#1b5e20;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-nav ul li{
-    margin:10px;
-}
-
-nav ul li a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.hero{
-    text-align:center;
-    padding:40px;
-    background:linear-gradient(
-        rgba(0,128,0,0.6),
-        rgba(0,128,0,0.6)
-    ),
-    url("https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200");
-    background-size:cover;
-    color:white;
+background:green;
+color:white;
+padding:20px;
+text-align:center;
 }
 
 .cards{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(320px,1fr));
-    gap:20px;
-    padding:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+padding:20px;
 }
 
 .card{
-    background:white;
-    border-radius:15px;
-    padding:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+background:white;
+padding:30px;
+border-radius:15px;
+text-decoration:none;
+color:black;
+font-size:20px;
+text-align:center;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
 }
 
-.card h2{
-    color:#2e7d32;
-    margin-bottom:15px;
-}
-
-.card input,
-.card textarea{
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
-}
-
-.card textarea{
-    min-height:100px;
-}
-
-.card button{
-    background:#2e7d32;
-    color:white;
-    border:none;
-    padding:10px 15px;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-.card button:hover{
-    background:#1b5e20;
-}
-
-#chatResult,
-#weatherResult,
-#cropResult,
-#scanResult,
-#newsResult,
-#voiceResult{
-    margin-top:15px;
-    padding:10px;
-    background:#f1f8e9;
-    border-radius:8px;
-}
-
-footer{
-    background:#1b5e20;
-    color:white;
-    text-align:center;
-    padding:15px;
-    margin-top:20px;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .login-box{
-        width:90%;
-    }
-
-    nav ul{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .hero{
-        padding:25px;
-    }
-
-    .cards{
-        grid-template-columns:1fr;
-    }
+.card:hover{
+transform:scale(1.05);
 }
