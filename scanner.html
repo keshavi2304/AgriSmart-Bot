@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product Scanner</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>📷 Product Scanner</h1>
+</header>
+
+<div class="search-container">
+
+<input type="file" id="image">
+
+<button onclick="scanProduct()">
+Scan Product
+</button>
+
+<div id="scanResult"></div>
+
+</div>
+
+<script>
+
+function scanProduct(){
+
+document.getElementById("scanResult")
+.innerHTML=
+
+`
+<div class="info-card">
+
+<h2>Scan Result</h2>
+
+<p>✅ Sample Detection: Tomato</p>
+
+<p>Quality: Fresh</p>
+
+<p>Category: Vegetable</p>
+
+</div>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
