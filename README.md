@@ -1,2 +1,2 @@
 # AgriSmart-Bot
-Agriculture related 
+Agri Smart Bot is an AI-powered smart farming platform designed to help farmers make better agricultural decisions. The website provides crop recommendations, weather-based guidance, market price insights, pest and disease management support, and personalized farming advice through an intelligent chatbot. Farmers can ask questions in simple language and receive instant, accurate, and practical solutions to improve productivity and profitability. The platform aims to make modern agriculture more accessible, efficient, and data-driven for farmers of all experience levels
